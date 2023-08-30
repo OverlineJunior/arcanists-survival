@@ -21,6 +21,6 @@ pub fn movement_input(keyboard: Res<Input<KeyCode>>, mut movements: Query<&mut M
             dir.x -= 1.;
         }
 
-        movement.direction = dir;
+        movement.direction = dir.normalize_or_zero();
     }
 }
