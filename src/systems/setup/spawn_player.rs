@@ -9,6 +9,10 @@ pub fn spawn_player(mut cmds: Commands, asset_server: Res<AssetServer>) {
         },
         sprite_bundle: SpriteBundle {
             texture: asset_server.load("test-arcanist.png"),
+            transform: Transform {
+                translation: Vec3::new(0., 0., 100.),
+                ..default()
+            },
             ..default()
         },
         ..default()
