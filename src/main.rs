@@ -10,13 +10,14 @@ use systems::{
         spawn_enemy::spawn_enemy,
     },
     movement_input::movement_input,
-    player_movement::player_movement,
+    apply_movement::apply_movement,
+    enemy_chase_player::enemy_chase_player,
 };
 
 fn main() {
     App::new()
         .add_plugins(DefaultPlugins)
         .add_systems(Startup, (spawn_camera, spawn_player, spawn_enemy))
-        .add_systems(Update, (movement_input, player_movement))
+        .add_systems(Update, (movement_input, apply_movement, enemy_chase_player))
         .run();
 }
