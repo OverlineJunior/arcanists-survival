@@ -8,7 +8,7 @@ pub fn spawn_player(mut cmds: Commands, asset_server: Res<AssetServer>) {
             ..default()
         },
         sprite_bundle: SpriteBundle {
-            texture: asset_server.load("test-arcanist.png"),
+            texture: asset_server.load("player.png"),
             transform: Transform {
                 translation: Vec3::new(0., 0., 100.),
                 ..default()
