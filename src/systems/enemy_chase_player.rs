@@ -9,7 +9,6 @@ pub fn enemy_chase_player(
 
     for (mut movement, transform) in &mut enemy_query {
         let dir = transform.looking_at(plr_pos, Vec3::Y).forward();
-        println!("{:?}", dir);
-        movement.direction = Vec2::new(dir.x, dir.y);
+        movement.direction = Vec2::new(dir.x, dir.y).normalize();
     }
 }
